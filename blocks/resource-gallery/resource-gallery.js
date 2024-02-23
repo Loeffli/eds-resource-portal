@@ -15,13 +15,13 @@ export default async function decorateFaq($block) {
 
   console.log(json);
 
-
+/*
   let text = "";
   for (const x in row) {
     text += x + ", ";
   }
   alert(text);
-
+*/
 
 
   json.data.forEach((row, i) => {
