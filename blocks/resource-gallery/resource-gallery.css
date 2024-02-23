@@ -1,37 +1,83 @@
+.tiles-wrapper {
+  border:0px solid blue;
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 415px));
+  margin-left: 30px;
+}
+
 .resource-tile {
+  box-sizing: border-box;
+  position: relative;
   border: .4px solid #666;
-  background-image: linear-gradient(to bottom right, #f7f7f7, #ddd);
+  border: 5px solid red;
+  border-radius: 25px;
+  background-image: linear-gradient(to bottom right, #fff, #f5f5f5);
+  background-image: linear-gradient(to bottom right, #f4f4f4, #ddd);
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.5);
   width: 400px;
-  height: 400px;
-  display: inline-block;
-  margin: 20px;
+  height: 400px;  
+  margin-bottom: 25px;
+  padding: 20px 30px;
+  
+  
+}
 
+.resource-tile-title {
+  color: #555;
+  font-size: 25px;
+  margin:0;
+  padding:0;
+  height: 80px;
+}
 
+.resource-tile-description {
+  height: 180px;
+  font-weight: bold;
+  color: #555;
+  
+}
+
+.resource-tile-source {
+  width: fit-content;
+  height: 22px;
+  max-width: 20px;
+  overflow: hidden;  
+  display: inline;
+  font-weight: bold;
+}
+
+.resource-tile-date {
+  height: 22px;
+  display: inline; 
+  margin-left: 14px;
 }
 
 
-main .faq dt {
-  margin-top: var(--spacing-m);
-  scroll-margin-top: var(--spacing-m);
-  font-weight: 700;
-  margin-bottom: var(--spacing-xxs);
+.resource-tile-tag {
+  height: 25px;
 }
 
-main .faq a {
-  scroll-margin: calc(var(--nav-height) + 1em);
+.resource-tile-audience {
+  height: 35px;
 }
 
-main .faq dt > a {
-  font-size: var(--heading-font-size-m);
-  line-height: 2.5em;
-  line-height: var(--type-heading-s-lh);
+
+.resource-tile-button {
+  position: absolute;
+  background-color: #555;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: white;    
+  bottom: 30px;
+  right: 30px;
+  padding: 4px 17px;
 }
 
-main .faq dd {
-  font-size: var(--type-body-s-size);
-  line-height: var(--type-body-s-lh);
-}
 
-body.guides-template main .faq dt a.anchor-link:any-link::before {
-  top: 0;
+.resource-tile > div {
+
+  dborder: 0.3px solid #666;
 }

@@ -12,6 +12,7 @@
 
 :root {
   /* colors */
+  --nav-height: 89px;
   --link-color: #202020;
   --link-hover-color: #666;
   --link-selected-color: #3C3C3C;
@@ -40,7 +41,6 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 }
 
-
 body {
   font-size: 16px;
   margin: 0;
@@ -56,9 +56,7 @@ body.appear {
   display: unset;
 }
 
-header {
-  height: var(--nav-height);
-}
+
 
 h1,
 h2,
@@ -74,26 +72,5 @@ h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 {
-  font-size: var(--heading-font-size-xxl);
-  text-shadow: 1px 1px 2px #000;
-}
-
-h2 {
-  font-size: var(--heading-font-size-l);
-}
-
-h3 {
-  font-size: var(--heading-font-size-l);
-  padding: var(--h3-padding);
-  color: #000;
-}
-
-h4 {
-  font-size: var(--heading-font-size-m);
-}
 
 
-body.noscroll {
-  overflow: hidden;
-}

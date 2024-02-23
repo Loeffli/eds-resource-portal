@@ -15,6 +15,15 @@ export default async function decorateFaq($block) {
 
   console.log(json);
 
+
+  let text = "";
+  for (const x in row) {
+    text += x + ", ";
+  }
+  alert(text);
+
+
+
   json.data.forEach((row, i) => {
     const $tile = document.createElement('div');
     $tile.classList.add('resource-tile');
@@ -22,16 +31,41 @@ export default async function decorateFaq($block) {
 
     //title
     const $title = document.createElement('h1');
+    $title.classList.add('resource-tile-title');
     $title.innerText = row.Title;
 
     //description
     const $description = document.createElement('div');
-    $description.classList.add('tile-description');
-    $description.innerHTML = row.Description;
+    $description.classList.add('resource-tile-description');
+    $description.innerText = row.Description;
 
-    $description.innerHTML = $description.innerHTML + "<br>" + row.Link + "<br>" + row.LastVerification + "<br>" + row.Audience;
+    //Tags
+    const $tags = document.createElement('div');
+    $tags.classList.add('resource-tile-tags');
+    $tags.innerText = "Tags: " + row.Tags;
 
-    $tile.append($title, $description);
+    //Audience
+    const $audience = document.createElement('div');
+    $audience.classList.add('resource-tile-audience');
+    $audience.innerText = "Audience: " + row.Audience;
+    
+    //Source
+    const $source = document.createElement('div');
+    $source.classList.add('resource-tile-source');
+    $source.innerText = row.Source;
+
+    //LastVerificationDate
+    const $date = document.createElement('div');
+    $date.classList.add('resource-tile-date');
+    $date.innerText = "verified: " + row.LastVerification;
+   
+    //open resource button
+    const $button = document.createElement('button');
+    $button.setAttribute("class", "resource-tile-button");
+    $button.setAttribute("onclick", "window.open('" +row.URL+ "');");
+    $button.innerText = "Open";
+
+    $tile.append($title, $description, $tags, $audience, $source, $date, $button);
 
     $tileWrapper.append($tile);
   });
