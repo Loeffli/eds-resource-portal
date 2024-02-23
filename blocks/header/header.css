@@ -5,7 +5,7 @@ header {
   z-index: 2;
   position: fixed;
   margin: 0;
-  padding: 0;
+  padding: 40px;
 }
 
 header h1 {
@@ -18,11 +18,12 @@ header h1 {
   margin-top: 1em;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
+  display: inline;
 }
 
-header h1::before {
-  
-  content: url('./images/Adobe-Logo-red-on-white.png');
-  
+#header-logo {
+  width: 55px;
+  margin-right: 20px;
 }
+
 

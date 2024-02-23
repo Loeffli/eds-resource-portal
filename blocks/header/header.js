@@ -17,18 +17,15 @@ export default async function decorate(block) {
     const header = document.createElement('div');
     header.innerHTML = html;
 
+    //add Adobe Logo infront of Title
+    // Create a "image" element:
+    const logo = document.createElement("img");
+    logo.src = "/images/Adobe-Logo-red-on-white.png";
+    logo.id = "header-logo";
+    // Insert before h1 title:
+    header.firstElementChild.insertBefore(logo, header.firstElementChild.children[0]);
+
     decorateIcons(header);
     block.append(header);
   }
 }
-
-
-//add Adobe Logo infront of Title
-// Create a "image" element:
-const logo = document.createElement("img");
-logo.src = "/images/Adobe-Logo-red-on-white.png";
-
-// Insert before h1 title:
-const h = document.querySelector(".header-wrapper")
-
-h.insertBefore(logo, h.children[5]);

@@ -10,21 +10,32 @@ export default async function decorateFaq($block) {
   const resp = await fetch(source);
   const json = await resp.json();
   $block.innerText = '';
-  const $dl = document.createElement('dl');
+  const $tileWrapper = document.createElement('div');
+  $tileWrapper.classList.add('tiles-wrapper');
+
+  console.log(json);
+
   json.data.forEach((row, i) => {
-    const $dt = document.createElement('dt');
-    $dt.classList.add('link-highlight-colorful-effect-hover-wrapper');
-    $dt.id = row.Id || `q${(i + 1)}`;
-    $dt.innerText = row.Title;
-    addAnchorLink($dt);
-    const $dd = document.createElement('dd');
-    const answer = autoLink(row.Answer);
-    const titleLink = $dt.querySelector('.anchor-link');
-    if (titleLink) titleLink.classList.add('link-highlight-colorful-effect-2');
-    $dd.innerHTML = answer;
-    $dl.append($dt, $dd);
+    const $tile = document.createElement('div');
+    $tile.classList.add('resource-tile');
+    $tile.id = `q${(i + 1)}`;
+
+    //title
+    const $title = document.createElement('h1');
+    $title.innerText = row.Title;
+
+    //description
+    const $description = document.createElement('div');
+    $description.classList.add('tile-description');
+    $description.innerHTML = row.Description;
+
+    $description.innerHTML = $description.innerHTML + "<br>" + row.Link + "<br>" + row.LastVerification + "<br>" + row.Audience;
+
+    $tile.append($title, $description);
+
+    $tileWrapper.append($tile);
   });
-  $block.append($dl);
+  $block.append($tileWrapper);
 
   const selected = document.getElementById(window.location.hash.slice(1));
   if (selected) {
