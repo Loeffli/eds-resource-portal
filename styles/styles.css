@@ -36,15 +36,15 @@
   --icon-visibility: none;
 
   /* fonts */
-  --body-font-family: adobe-clean-light, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
-  --heading-font-family: adobe-clean-regular, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --light: adobe-clean-light, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --regular: adobe-clean-regular, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --black: adobe-clean-black, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
 }
 
 body {
   font-size: 16px;
   margin: 0;
-  font-family: var(--body-font-family);
+  font-family: var(--light);
   line-height: 22px;
   color: var(--text-color);
   background-color: var(--background-color-light);

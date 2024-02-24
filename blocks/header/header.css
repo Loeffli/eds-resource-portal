@@ -1,6 +1,7 @@
 /* header and nav layout */
 header {
   background-image: linear-gradient(to bottom right, red, #a00);
+  box-shadow:  0px 3px 5px rgba(0, 0, 0, 0.4);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -10,21 +11,24 @@ header {
 }
 
 header h1 {
+  position: absolute;
+  top: -10px;
+  left: 416px;
   font-family: var(--heading-font-family);
   font-size: 60px;
   font-weight: 600;
   line-height: 75px;
   text-shadow: rgb(0, 0, 0) 1px 1px 2px;
   color: rgb(255, 255, 255);
-  margin-top: 1em;
-  margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
-  display: inline;
+  display: inline; 
 }
 
 #header-logo {
-  width: 55px;
+  width: 320px;
   margin-right: 20px;
+  margin-top: -20px;
+  ffilter: drop-shadow(10px 3px 5px #777);
 }
 
 

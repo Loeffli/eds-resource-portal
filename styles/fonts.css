@@ -25,3 +25,11 @@
   font-weight: 400;
   src: url("/fonts/AdobeClean-Light.ttf") format("truetype")
 }
+
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-black;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/AdobeClean-Black.otf") format("truetype")
+}

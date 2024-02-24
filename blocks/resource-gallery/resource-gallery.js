@@ -13,21 +13,28 @@ export default async function decorateFaq($block) {
   const $tileWrapper = document.createElement('div');
   $tileWrapper.classList.add('tiles-wrapper');
 
-  console.log(json);
+//Get keys of tags and roles
+//alert(Object.keys(row));
+  let tagKeys = [];
+  let roleKeys = [];
 
-/*
-  let text = "";
-  for (const x in row) {
-    text += x + ", ";
+  for (const key in json.data[1]) {
+    if (key.substring(0, 2) === "T_") {tagKeys.push(key); }
+    if (key.substring(0, 2) === "R_") {roleKeys.push(key); }
   }
-  alert(text);
-*/
+  tagKeys.sort();
+  roleKeys.sort();
+  
 
-
-  json.data.forEach((row, i) => {
+  //parsing the JSON rows i.e. the resource records
+  json.data.forEach((row, i) => {  
     const $tile = document.createElement('div');
     $tile.classList.add('resource-tile');
+    $tile.setAttribute("onclick", "window.open('" +row.URL+ "');");
     $tile.id = `q${(i + 1)}`;
+
+    const $tileInnerShadow = document.createElement('div');
+    $tileInnerShadow.classList.add('resource-tile-inner-shadow');    
 
     //title
     const $title = document.createElement('h1');
@@ -42,31 +49,50 @@ export default async function decorateFaq($block) {
     //Tags
     const $tags = document.createElement('div');
     $tags.classList.add('resource-tile-tags');
-    $tags.innerText = "Tags: " + row.Tags;
+  
+    let tagText = "";
+    for (const tagKey of tagKeys) {
+      if (row[tagKey] === "X") {
+        const tagLabel = tagKey.substring(2);
+        tagText += '<span class="resource-tag-label ' +tagLabel+ '">' +tagLabel+ '</span>';
+      }      
+    }
+    $tags.innerHTML = "Tags: " + tagText;
 
-    //Audience
-    const $audience = document.createElement('div');
-    $audience.classList.add('resource-tile-audience');
-    $audience.innerText = "Audience: " + row.Audience;
+
+    //Roles
+    const $roles = document.createElement('div');
+    $roles.classList.add('resource-tile-roles');
+    let roleText = "";
+    for (const roleKey of roleKeys) {
+      if (row[roleKey] === "X") {
+        const roleLabel = roleKey.substring(2);
+        roleText += '<span class="resource-role-label ' +roleLabel+ '">' +roleLabel+ '</span>';
+      }      
+    }
+    $roles.innerHTML = "Roles: " + roleText;
+
     
     //Source
     const $source = document.createElement('div');
     $source.classList.add('resource-tile-source');
-    $source.innerText = row.Source;
+    $source.innerHTML = row.Source + ' ★★★★★ 842 <img class="language-flag" src="/images/language-icons/EN.png" />';
 
-    //LastVerificationDate
-    const $date = document.createElement('div');
-    $date.classList.add('resource-tile-date');
-    $date.innerText = "verified: " + row.LastVerification;
-   
-    //open resource button
-    const $button = document.createElement('button');
-    $button.setAttribute("class", "resource-tile-button");
-    $button.setAttribute("onclick", "window.open('" +row.URL+ "');");
-    $button.innerText = "Open";
+     
+    //info tool tip
+    const $info = document.createElement("div");
+    $info.classList.add('resource-tile-info');
+    let tooltipText = '<div class="resource-tooltip-label">Resource ID:</div><div class="resource-tooltip-value">' +(i+2)+ '</div><br />';
+    tooltipText += '<div class="resource-tooltip-label">Contributor:</div><div class="resource-tooltip-value">' +row.Contributor+ '</div><br />';
+    tooltipText += '<div class="resource-tooltip-label">Verified on:</div><div class="resource-tooltip-value">' +row.VerificationDate+ '</div>';
+    tooltipText += '<div class="resource-tooltip-label">Impressions:</div><div class="resource-tooltip-value">' +row.Impressions+ '</div>';
+    tooltipText += '<div class="resource-tooltip-label">Rating:</div><div class="resource-tooltip-value">' +row.Rating+ '</div>';
+    $info.innerHTML = '<img class="resource-info-icon" src="/images/info-icon.png"><div class="resource-tool-tip">' +tooltipText+ '</div>';
+      
 
-    $tile.append($title, $description, $tags, $audience, $source, $date, $button);
+    $tileInnerShadow.append($title, $source, $description, $roles, $tags, $info);
 
+    $tile.append($tileInnerShadow);
     $tileWrapper.append($tile);
   });
   $block.append($tileWrapper);

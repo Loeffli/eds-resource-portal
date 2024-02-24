@@ -21,6 +21,8 @@ export default async function decorate(block) {
     // Create a "image" element:
     const logo = document.createElement("img");
     logo.src = "/images/Adobe-Logo-red-on-white.png";
+    logo.src = "/images/aetsch-logo.png";
+
     logo.id = "header-logo";
     // Insert before h1 title:
     header.firstElementChild.insertBefore(logo, header.firstElementChild.children[0]);
