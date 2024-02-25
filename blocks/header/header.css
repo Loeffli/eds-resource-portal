@@ -76,3 +76,7 @@ header h1 {
   cursor: pointer;
   color: #ffee00;
 }
+
+.header li a:active  {
+  color: red;
+}
