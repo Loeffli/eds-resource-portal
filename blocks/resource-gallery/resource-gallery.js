@@ -19,8 +19,8 @@ export default async function decorateFaq($block) {
   let roleKeys = [];
 
   for (const key in json.data[1]) {
-    if (key.substring(0, 2) === "T_") {tagKeys.push(key); }
-    if (key.substring(0, 2) === "R_") {roleKeys.push(key); }
+    if (key.substring(0, 2) === "T:") {tagKeys.push(key); }
+    if (key.substring(0, 2) === "R:") {roleKeys.push(key); }
   }
   tagKeys.sort();
   roleKeys.sort();

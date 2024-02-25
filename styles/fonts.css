@@ -33,3 +33,12 @@
   font-weight: 400;
   src: url("/fonts/AdobeClean-Black.otf") format("truetype")
 }
+
+
+@font-face {
+  font-display: block;
+  font-family: fraktur;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/WUSHIN.otf") format("truetype")
+}
