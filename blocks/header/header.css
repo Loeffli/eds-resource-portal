@@ -50,28 +50,29 @@ header h1 {
 
 .header li {
   float: left;
+  
+  margin-right: 40px;
+}
+
+.header li a, .header li a:link, .header li a:visited {
+  color: rgba(255, 255, 255, 0.95);
+  display: block;
   font-family: fraktur;
   font-size: 36px;
   line-height: 66px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.95);
   background-image: url(/images/schild-blue-empty.png);
   background-size: 208px 60px;
   width: 208px;
   height: 60px;
-  margin-right: 40px;
+  text-decoration: none;
 }
 
-.header li:hover {
+.header li a:link {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.header li a:hover, .header li a:active  {
   cursor: pointer;
+  color: #ffee00;
 }
-
-#resources {  
-  left: 600px;
-}
-
-#faq {  
-  left: 1200px;
-}
-
-
