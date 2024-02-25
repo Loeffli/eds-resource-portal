@@ -25,6 +25,20 @@ header h1 {
   display: inline; 
 }
 
+header h2 {
+  position: absolute;
+  text-align: center;
+  top: 70px;
+  left: 286px;
+  font-family: var(--regular);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 15px;
+  text-shadow: none;
+  color: black;
+  display: inline; 
+}
+
 #header-logo {
   position: fixed;
   width: 250px;
@@ -36,7 +50,7 @@ header h1 {
   position: fixed;
   width: 400px;
   left: 50px;
-  top: 20px;
+  top: 14px;
 }
 
 .header ul {
