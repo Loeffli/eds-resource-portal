@@ -76,7 +76,7 @@ export default async function decorateFaq($block) {
     //Source
     const $source = document.createElement('div');
     $source.classList.add('resource-tile-source');
-    $source.innerHTML = row.Source + ' ★★★★★ 842 <img class="language-flag" src="/images/language-icons/EN.png" />';
+    $source.innerHTML = row.Source + ' ★★★★★ 842 <img class="language-flag" alt="English" src="/images/language-icons/EN.png" />';
 
      
     //info tool tip
