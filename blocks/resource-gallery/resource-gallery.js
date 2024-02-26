@@ -88,7 +88,7 @@ export default async function decorateFaq($block) {
     tooltipText += '<div class="resource-tooltip-label">Verified on:</div><div class="resource-tooltip-value">' +row.VerificationDate+ '</div>';
     tooltipText += '<div class="resource-tooltip-label">Impressions:</div><div class="resource-tooltip-value">' +row.Impressions+ '</div>';
     tooltipText += '<div class="resource-tooltip-label">Rating:</div><div class="resource-tooltip-value">' +row.Rating+ '</div>';
-    $info.innerHTML = '<img class="resource-info-icon" alt ="info button" src="/images/info-icon.png"><div class="resource-tool-tip">' +tooltipText+ '</div>';
+    $info.innerHTML = '<img class="resource-info-icon" alt ="info button" width="25" height="25" src="/images/info-icon.png"><div class="resource-tool-tip">' +tooltipText+ '</div>';
       
 
     $tileInnerShadow.append($title, $source, $description, $roles, $tags, $info);
