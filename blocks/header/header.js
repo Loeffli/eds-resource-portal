@@ -23,6 +23,8 @@ export default async function decorate(block) {
     //--logo.src = "/images/Adobe-Logo-red-on-white.png";
     logo.src = "/images/aetsch-logo.png";
     logo.id = "header-logo";
+    logo.alt = "Header Logo";
+    
     // Insert before h1 title:
     header.firstElementChild.insertBefore(logo, header.firstElementChild.children[0]);
 
@@ -30,6 +32,7 @@ export default async function decorate(block) {
     const edgybatch = document.createElement("img");
     edgybatch.src = "/images/EdgyBatchLogotransparent.png";
     edgybatch.id = "edgybatch";
+    edgybatch.alt = "Main Logo EdgeyBatch";
     // Insert before h1 title:
     header.firstElementChild.insertBefore(edgybatch, header.firstElementChild.children[1]);
   

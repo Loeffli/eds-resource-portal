@@ -82,12 +82,13 @@ export default async function decorateFaq($block) {
     //info tool tip
     const $info = document.createElement("div");
     $info.classList.add('resource-tile-info');
+
     let tooltipText = '<div class="resource-tooltip-label">Resource ID:</div><div class="resource-tooltip-value">' +(i+2)+ '</div><br />';
     tooltipText += '<div class="resource-tooltip-label">Contributor:</div><div class="resource-tooltip-value">' +row.Contributor+ '</div><br />';
     tooltipText += '<div class="resource-tooltip-label">Verified on:</div><div class="resource-tooltip-value">' +row.VerificationDate+ '</div>';
     tooltipText += '<div class="resource-tooltip-label">Impressions:</div><div class="resource-tooltip-value">' +row.Impressions+ '</div>';
     tooltipText += '<div class="resource-tooltip-label">Rating:</div><div class="resource-tooltip-value">' +row.Rating+ '</div>';
-    $info.innerHTML = '<img class="resource-info-icon" src="/images/info-icon.png"><div class="resource-tool-tip">' +tooltipText+ '</div>';
+    $info.innerHTML = '<img class="resource-info-icon" alt ="info button" src="/images/info-icon.png"><div class="resource-tool-tip">' +tooltipText+ '</div>';
       
 
     $tileInnerShadow.append($title, $source, $description, $roles, $tags, $info);

@@ -1,4 +1,4 @@
-let webinarTeaser = document.querySelector(".webinar-teaser")
+let webinarTeaser = document.querySelector(".webinar-teaser");
 let linkCell = webinarTeaser.lastElementChild;
 let buttonLink = linkCell.innerText.trim();
 linkCell.remove();
