@@ -437,3 +437,4 @@ export default async function decorate(block) {
     Object.entries(config).forEach(([key, value]) => { if (value) form.dataset[key] = value; });
   }
 }
+alert("CML form.js");
