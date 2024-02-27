@@ -21,7 +21,7 @@ export default async function decorate(block) {
     // Create a "image" element:
     const logo = document.createElement("img");
     //--logo.src = "/images/Adobe-Logo-red-on-white.png";
-    logo.src = "/images/aetsch-logo.png";
+    logo.src = "/images/logo.webp";
     logo.id = "header-logo";
     logo.alt = "Header Logo";
     
@@ -30,7 +30,7 @@ export default async function decorate(block) {
 
     // Create a "image" element:
     const edgybatch = document.createElement("img");
-    edgybatch.src = "/images/EdgyBatchLogotransparent.png";
+    edgybatch.src = "/images/EdgyBatchLogotransparentc.png";
     edgybatch.id = "edgybatch";
     edgybatch.alt = "Main Logo EdgeyBatch";
     // Insert before h1 title:
