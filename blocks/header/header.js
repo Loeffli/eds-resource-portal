@@ -30,7 +30,7 @@ export default async function decorate(block) {
 
     // Create a "image" element:
     const edgybatch = document.createElement("img");
-    edgybatch.src = "/images/EdgyBatchLogotransparentc.png";
+    edgybatch.src = "/images/EdgyBatchLogotransparent.webp";
     edgybatch.id = "edgybatch";
     edgybatch.alt = "Main Logo EdgeyBatch";
     // Insert before h1 title:
