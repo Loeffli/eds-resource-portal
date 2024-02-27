@@ -20,8 +20,7 @@ export default async function decorate(block) {
     //add Adobe Logo infront of Title
     // Create a "image" element:
     const logo = document.createElement("img");
-    //--logo.src = "/images/Adobe-Logo-red-on-white.png";
-    logo.src = "/images/logo.webp";
+    logo.src = "/images/logo300x154.webp";
     logo.id = "header-logo";
     logo.alt = "Header Logo";
     
@@ -30,7 +29,7 @@ export default async function decorate(block) {
 
     // Create a "image" element:
     const edgybatch = document.createElement("img");
-    edgybatch.src = "/images/EdgyBatchLogotransparent.webp";
+    edgybatch.src = "/images/EdgyBatchLogotransparentb.webp";
     edgybatch.id = "edgybatch";
     edgybatch.alt = "Main Logo EdgeyBatch";
     // Insert before h1 title:

@@ -42,9 +42,8 @@ header h2 {
 #header-logo {
   position: fixed;
   width: 300px;
-  height: 208px;
-  right: 10px;
-  top: -40px;
+  right: 20px;
+  top: 5px;
 }
 
 #edgybatch {
@@ -74,7 +73,7 @@ header h2 {
   display: inline-block;
   font-family: fraktur;
   font-size: 25px;
-  line-height: 58px;
+  line-height: 52px;
   text-align: center;
   background-image: url(/images/label-blue-shadow.webp);
   background-size: 174px 54px;
